@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csrf-name" content="csrf5dba65b67c5d4">
+	<meta name="csrf-value" content="bbfa3a9a2ddfe8817a5f786421c72e31">
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>	<link rel="dns-prefetch" href="https://cdn.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn1.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn2.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn3.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn4.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn5.vectorstock.com">
+
+	<title>Pink heart shaped outlined icons Royalty Free Vector Image</title>
+	<meta name="description" content="Pink heart shaped icon. Stock vector illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions. ID #12692709.">
+	
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://www.vectorstock.com/royalty-free-vector/pink-heart-shaped-outlined-icons-vector-12692709">
+	<meta property="og:title" content="Pink heart shaped outlined icons vector image on VectorStock">
+	<meta property="og:description" content="Pink heart shaped icon. Stock vector illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+	<meta property="og:image" content="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg">
+	<meta property="og:image:url" content="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg">
+	<meta property="og:image:secure_url" content="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<meta property="og:price:amount" content="0.69">
+	<meta property="og:price:currency" content="USD">
+	<meta property="product:price:amount" content="0.69">
+	<meta property="product:price:currency" content="USD">
+
+	<meta property="fb:app_id" content="241100862642313">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.vectorstock.com/royalty-free-vector/pink-heart-shaped-outlined-icons-vector-12692709">
+	<meta name="twitter:title" content="Pink heart shaped outlined icons vector image">
+	<meta name="twitter:description" content="Pink heart shaped icon. Stock vector illustration">
+	<meta name="twitter:image" content="https://cdn5.vectorstock.com/i/thumb-large/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg">
+	<meta name="twitter:image:width" content="238">
+	<meta name="twitter:image:height" content="250">
+	<meta name="twitter:site" content="@VectorStock">
+
+	<link rel="canonical" href="https://www.vectorstock.com/royalty-free-vector/pink-heart-shaped-outlined-icons-vector-12692709">
+	<link rel="shortcut icon" href="https://cdn.vectorstock.com/img/icons/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/common1571873681.min.css">
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/vector1571873681.min.css">
+	<script src="//cdn.vectorstock.com/cache/common1572394458.min.js"></script>
+	<script src="//cdn.vectorstock.com/cache/vector1572394458.min.js"></script>
+<!-- Analytics --><script type="text/javascript">// Load GA script
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// Setup
+ga('create', 'UA-2180430-2', 'none');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!-- Top header -->
+<header>
+	<nav class="top">
+		<figure>
+			<a href="/" title="VectorStock&reg;">VectorStock&reg;</a>
+		</figure>
+
+		<div class="grid">
+			<form id="searchbox"
+				 class="empty">
+				<div class="wrap">
+					<fieldset>
+						<div class="contents">
+							<div class="tags">
+								<ul></ul>
+							</div>
+							<div class="input">
+								<input type="text" name="input" autocomplete="off" autocapitalize="none" spellcheck="true" value="" placeholder="Search…" maxlength="50" autofocus>
+								<button type="button" data-action="clear">×</button>
+							</div>
+
+							<input type="hidden" name="category" value="">
+							<input type="hidden" name="custom_srp" value="">
+							<input type="hidden" name="artist" value="">
+							<input type="hidden" name="similar" value="">
+						</div>
+					</fieldset>
+
+					<button type="submit">
+						<span class="icon">Search</span>
+					</button>
+				</div>
+			</form>
+			<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+		</div>
+
+		<div class="aside">
+			<ul>
+				<li><a href="/popular-categories" title="Popular Categories">Popular
+						Categories</a></li>
+					<li><button type="button" data-action="signup">Sign Up</button></li>
+				</ul>
+		</div>
+
+		<div id="mobilenav-icon">
+			<span></span><span></span><span></span><span></span>
+		</div>
+	</nav>
+
+	<!-- Submenu -->
+		<nav id="searchrelated"></nav>	
+
+		<!-- Mobile menu -->
+	<div id="mobilenav-menu">
+		<div>
+			<div class="group">
+				<h4>Browse</h4>
+				<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+			</div>
+			<div class="group">
+				<h4>Account</h4>
+				<ul>
+					<li class="account">
+							<ul>
+								<li><a href="/signup">Sign Up</a></li>
+								<li data-action="login"><a href="/?login=1">Login…</a></li>
+							</ul>
+						</li>
+				</ul>
+				<form method="get" action="/auth/logout" class="logout">
+					<input type="hidden" name="logout" value="1">
+				</form>
+			</div>
+			<div class="group">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/faq"><abbr title="Frequently Asked Questions">FAQs</abbr></a></li>
+					<li><a href="/contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Account Menu Tabs -->
+		<aside id="nav_sidebar" class="tabs tabsDark">
+
+			<nav>
+				<ul role="tablist">
+					<li data-tab-id="signup" class=""><span role="tab"><span>Sign Up</span></span></li>
+					<li data-tab-id="login" class="selected"><span role="tab"><span>Log In</span></span></li>
+				</ul>
+			</nav>
+
+			<section id="sb_signup" data-tab-id="signup" class="">
+				<div class="primary">
+					<p>New to VectorStock?</p>
+					<p><em>We're the largest royalty-free, vector-only stock agency in the world.</em></p>
+					<p>Every week we add new premium graphics by the thousands.</p>
+				</div>
+				<div class="secondary">
+					<p>Whether you're a global ad&nbsp;agency or a freelance graphic designer, we have the vector graphics to make your project come to life.</p>
+					<p>Buy Vectors, sell Vectors or both. <a href="/signup">Sign up now, it’s free.</a></p>
+				</div>
+				<div class="footer">
+					<button class="master">
+						<span class="title">Sign Up...</span>
+						<span class="value">
+							<span class="symbol signup"></span>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section id="sb_login" data-tab-id="login" class="selected">
+				<form action="/auth/login" method="post">
+
+
+					<fieldset class="">
+						<label for="vs_username">Email / Username</label>
+						<div class="textfield">
+							<input type="text" id="vs_username" name="vs_username" value="" autocomplete="on" tabindex="1">
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<label for="vs_password">Password</label>
+						<button type="button" class="forgot">Forgot Password</button>
+						<div class="textfield">
+							<input type="password" id="vs_password" name="vs_password" value="" autocomplete="on" tabindex="2"  maxlength="20">
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="checkbox checked">
+							<label class="selected" for="vs_remember">
+								<span class="title">Stay Logged In</span>
+								<span class="icon"></span>
+								<input type="checkbox" id="vs_remember" name="vs_remember" value="yes" tabindex="3" checked>
+							</label>
+						</div>
+					</fieldset>
+
+
+					<button type="submit" tabindex="4">Log In</button>
+				</form>
+				<div class="alternatives">
+					<h6>Or Login With</h6>
+					<ul>
+						<li class="gp"><a href="/">
+							<span class="title">Google</span>
+							<span class="icon"></span>
+						</a></li>
+						<li class="fb"><a href="/">
+							<span class="title">Facebook</span>
+							<span class="icon"></span>
+						</a></li>
+					</ul>
+				</div>
+
+				
+			</section>
+		</aside>
+
+	<!-- Page -->
+	<article>
+		<section id="vs-asset">
+
+			<!-- Aside -->
+			<div class="aside">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors">
+							<span itemprop="name">Royalty Free Vectors</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors/watercolor-shaped-icon-vectors">
+							<span itemprop="name">Watercolor Shaped Icon Vectors</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+				</ol>
+
+				<h1>
+					Pink heart shaped outlined icons vector&nbsp;image														</h1>
+
+				<figure style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg" title="Pink heart shaped outlined icons vector image" alt="Pink heart shaped outlined icons"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg" title="Pink heart shaped outlined icons vector image" alt="Pink heart shaped outlined icons">
+					</div>
+					<div class="overlay"></div>
+				</figure>
+
+				<form data-loggedin="0" data-licenses="2" data-license="standard" data-status="" data-payments="3" data-payment="single-image">
+					<input type="hidden" id="vector_id" value="12692709">
+					<input type="hidden" id="vector_title" value="Pink heart shaped outlined icons">
+					<input type="hidden" id="vector_description" value="Pink heart shaped icon. Stock vector illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<input type="hidden" id="vector_url" value="https://www.vectorstock.com/royalty-free-vector/pink-heart-shaped-outlined-icons-vector-12692709">
+					<input type="hidden" id="vector_media" value="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg">
+					<input type="hidden" id="vector_ratio" value="1">
+					<input type="hidden" id="vector_license_status" value="">
+					<input type="hidden" id="artist_name" value="Shaitan1985">
+					<input type="hidden" id="account_user" value="0">
+
+					<div class="options">
+						<!--
+						-- OPTION: License type
+						-->
+						<div class="option" data-type="license" data-license="standard" data-licenses="2">
+							<h6><span class="type">License</span><a href="/faq/members/standard-license">Learn More</a></h6>
+							<div class="optgroup radgroup">
+								<fieldset>
+									<label for="f_license_standard" class="checked">
+										<input type="radio" id="f_license_standard" name="license" value="standard" checked="checked" tabindex="2">
+										<span class="label">Standard</span>
+										<span class="descr">For Print, Advertising, Design</span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_license_expanded">
+										<input type="radio" id="f_license_expanded" name="license" value="expanded" tabindex="4">
+										<span class="label">Expanded</span>
+										<span class="descr">For Resale &amp; Reproduction</span>
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="help">
+								<p>The license type determines how you can use this image.</p>
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+																						<th data-license="standard">Std.</th>																						<th data-license="expanded">Exp.</th>										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td>Print / Editorial</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Graphic Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Web Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Social Media</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Edit &amp; Modify</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Multi-user</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Resale Items</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Unlimited Runs</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!--
+						-- OPTION: Payment options (Standard)
+						-->
+						<div class="option" data-type="payment" data-license="standard">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="standard">
+																<fieldset>
+									<label for="f_payment_standard_single-image" class="checked" >
+										<input type="radio" id="f_payment_standard_single-image" name="payment_standard" data-cost="14.99" value="single-image"  checked="checked" tabindex="5">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>14.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_standard_credits">
+										<input type="radio" id="f_payment_standard_credits" name="payment_standard" data-cost="1" value="credits" tabindex="6">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>1.00</var></span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_payment_standard_subscription">
+										<input type="radio" id="f_payment_standard_subscription" name="payment_standard" data-cost="1" value="subscription" tabindex="7">
+										<span class="label">Subscription</span>
+										<span class="value"><small>$</small><var>0.69</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>There are three ways to pay for Standard licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Image Price</th>
+										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>14.99</span>
+												</span>
+												<span class="byline">One-time payment</span>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-As-You-Go Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>1</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1). Minimum purchase of 30.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Subscription Plan</span>
+													<span class="dm"></span>
+													<span class="dd"><em>From</em> 69c</span>
+												</span>
+												<span class="byline">Choose a monthly plan. Unused downloads automatically roll into following month.</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--
+						-- OPTION: Payment options (Expanded)
+						-->
+						<div class="option" data-type="payment" data-license="expanded">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="expanded">
+																<fieldset>
+									<label for="f_payment_expanded_single-image" class="checked">
+										<input type="radio" id="f_payment_expanded_single-image" name="payment_expanded" data-cost="29.99" value="single-image" checked="checked" tabindex="8">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>29.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_expanded_credits">
+										<input type="radio" id="f_payment_expanded_credits" name="payment_expanded" data-cost="30" value="credits" tabindex="9">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>30.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+														<div class="help">
+								<p>There are two ways to pay for Expanded licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Cost per Image</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>29.99</span>
+												</span>
+												<span class="byline">One-off payment, no signup needed.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>30</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1).</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+													</div>
+					</div>
+					<div class="download">
+						<button type="button" data-action="download">
+							<span class="label">Download Image</span>
+							<span class="icon"></span>
+						</button>
+						<h6><span class="label">Files Included</span></h6>
+						<div class="help">
+							<span class="loading"><span class="label">Loading Details...</span></span>
+						</div>
+					</div>
+					<div class="download_options">
+						<div class="wrap">
+							<div class="optgroup" data-action="download">
+								<span class="header">Download File/s:</span>
+								<div class="dropdown" data-value="zip">
+									<div class="display">
+										<span class="label"><strong>ZIP Archive</strong></span>
+										<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M10.6,12.8 15,17.2 19.4,12.8"/></svg></span>
+									</div>
+									<div class="select">
+										<select>
+											<optgroup label="All Files">
+												<option value="zip" data-label="ZIP Archive" data-details="" data-url="" selected="selected">ZIP Archive</option>											</optgroup>
+											<optgroup label="Image">
+												<option value="jpg" data-label="High-res JPG" data-details="300 DPI+" data-url="">High-res JPG (300 DPI+)</option>												<option value="png" data-label="High-res PNG" data-details="300 DPI+" data-url="">High-res PNG (300 DPI+)</option>											</optgroup>
+											<optgroup label="Vector">
+												<option value="ai" data-label="Adobe Illustrator" data-details="v10+" data-url="">Adobe Illustrator (v10+)</option>												<option value="eps" data-label="Vector EPS" data-details="v8+" data-url="">Vector EPS (v8+)</option>												<option value="pdf" data-label="Vector PDF" data-details="" data-url="">Vector PDF</option>											</optgroup>
+										</select>
+									</div>
+								</div>
+								<button type="button" data-action="download_file">
+									<span class="label">Download ZIP</span>
+									<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M23.6,21.2 23.6,9.5 16.4,9.5 16.4,21.3 10.8,21.3 11,21.5 20,30.5 29.2,21.3"/></svg></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Image -->
+			<div class="image">
+				<figure data-orientation="square" style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg" title="Pink heart shaped outlined icons vector image" alt="Pink heart shaped outlined icons"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg" title="Pink heart shaped outlined icons vector image" alt="Pink heart shaped outlined icons">
+					</div>
+					<div class="overlay"></div>
+					<div class="panels">
+						<div class="share">
+							<h4>Share on</h4>
+							<ul>
+								<li class="pinterest"><button type="button" data-action="pinterest"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M12.5,0C5.6,0,0,5.6,0,12.5c0,5.12,3.08,9.52,7.48,11.45c-0.03-0.87-0.01-1.92,0.22-2.87c0.24-1.01,1.61-6.81,1.61-6.81s-0.4-0.8-0.4-1.98c0-1.85,1.07-3.24,2.41-3.24c1.14,0,1.69,0.85,1.69,1.88c0,1.14-0.73,2.85-1.1,4.44c-0.31,1.33,0.67,2.41,1.97,2.41c2.37,0,3.96-3.04,3.96-6.65c0-2.74-1.85-4.79-5.2-4.79c-3.79,0-6.15,2.83-6.15,5.99c0,1.09,0.32,1.86,0.82,2.45c0.23,0.27,0.26,0.38,0.18,0.7c-0.06,0.23-0.2,0.78-0.25,1c-0.08,0.32-0.34,0.43-0.63,0.31c-1.75-0.71-2.56-2.62-2.56-4.77c0-3.55,3-7.81,8.93-7.81c4.77,0,7.91,3.45,7.91,7.16c0,4.9-2.73,8.57-6.75,8.57c-1.35,0-2.62-0.73-3.05-1.56c0,0-0.73,2.88-0.88,3.44c-0.27,0.96-0.78,1.93-1.26,2.68C10.08,24.82,11.27,25,12.5,25C19.4,25,25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z"/></svg></span><span class="label">Pinterest</span></span></button></li>
+								<li class="facebook"><button type="button" data-action="facebook"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M22.44,1H2.56C1.7,1,1,1.7,1,2.56v19.88C1,23.3,1.7,24,2.56,24h10.41v-8.89H9.98v-3.46h2.99V9.1c0-2.96,1.81-4.58,4.45-4.58c1.27,0,2.35,0.09,2.67,0.14v3.1l-1.83,0c-1.44,0-1.72,0.68-1.72,1.69v2.21h3.43l-0.45,3.46h-2.98V24h5.89C23.3,24,24,23.3,24,22.44V2.56C24,1.7,23.3,1,22.44,1z"/></svg></span><span class="label">Facebook</span></span></button></li>
+								<li class="twitter"><button type="button" data-action="twitter"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M7.86,22.5c9.43,0,14.59-7.69,14.59-14.37c0-0.22,0-0.44-0.01-0.65c1-0.71,1.87-1.6,2.56-2.61c-0.92,0.4-1.91,0.67-2.95,0.79c1.06-0.62,1.87-1.61,2.26-2.79c-0.99,0.58-2.09,1-3.26,1.23c-0.94-0.98-2.27-1.6-3.74-1.6c-2.83,0-5.13,2.26-5.13,5.05c0,0.4,0.05,0.78,0.13,1.15C8.05,8.49,4.27,6.48,1.74,3.42C1.3,4.17,1.05,5.04,1.05,5.96c0,1.75,0.91,3.3,2.28,4.2C2.49,10.14,1.7,9.91,1,9.53C1,9.55,1,9.58,1,9.6c0,2.45,1.77,4.49,4.11,4.95c-0.43,0.12-0.88,0.18-1.35,0.18c-0.33,0-0.65-0.03-0.96-0.09c0.65,2.01,2.55,3.47,4.79,3.51C5.84,19.5,3.63,20.3,1.22,20.3c-0.41,0-0.82-0.02-1.22-0.07C2.27,21.66,4.97,22.5,7.86,22.5"/></svg></span><span class="label">Twitter</span></span></button></li>
+							</ul>
+						</div>
+						<div class="composite">
+							<button type="button" data-action="download"><span><span class="label">Download JPG Preview Image</span></span></button>
+						</div>
+					</div>
+				</figure>
+				<div class="details">
+					<div class="meta">
+						<ul>
+							<li class="meta-id">
+								<dl><dt>Image ID</dt><dd>12692709</dd></dl>
+							</li>
+							<li class="meta-artist">
+								<dl>
+									<dt>Artist</dt>
+									<dd><a href="/royalty-free-vectors/vectors-by_Shaitan1985" rel="nofollow">Shaitan1985</a><button type="button" data-action="follow" title="Follow Artists that you like to create a newsfeed of their recent images."><span class="label">Follow</span></button></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="options" data-total="2">
+						<ul>
+							<li class="opt-like">
+								<button type="button" data-action="like" data-count="0"><span class="icon">&hearts;</span><span class="label">Like</span><span class="tally"></span></button>
+							</li>
+							<li class="opt-cart">
+								<button type="button" data-action="cart"><span class="icon">+</span><span class="label">Cart</span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Metadata -->
+			<div class="metadata">
+				<div itemtype="http://schema.org/Product" itemscope>
+					<meta itemprop="sku" content="12692709">
+					<meta itemprop="productID" content="12692709">
+					<meta itemprop="name" content="Pink heart shaped outlined icons">
+					<meta itemprop="description" content="Pink heart shaped icon. Stock vector illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<meta itemprop="releaseDate" content="2017-01-22">
+					<link itemprop="image" href="https://cdn5.vectorstock.com/i/1000x1000/27/09/pink-heart-shaped-outlined-icons-vector-12692709.jpg">
+					
+					<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+						<meta itemprop="name" content="VectorStock">
+					</div>
+					<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+						<link itemprop="url" href="https://www.vectorstock.com/royalty-free-vector/pink-heart-shaped-outlined-icons-vector-12692709">
+						<meta itemprop="availability" content="https://schema.org/InStock">
+						<div itemprop="price">0.69</div>
+						<div itemprop="priceCurrency">USD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="vs-related">
+			<div id="group-similar" class="group">
+				<h6><span class="icon"></span><strong>Similar Images</strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/90/21/seamless-background-of-hand-drawn-stylized-hearts-vector-23579021.jpg"><a href="//www.vectorstock.com/royalty-free-vector/seamless-background-of-hand-drawn-stylized-hearts-vector-23579021" title="seamless background of hand drawn stylized hearts vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/90/21/seamless-background-of-hand-drawn-stylized-hearts-vector-23579021.jpg" title="seamless background of hand drawn stylized hearts" alt="seamless background of hand drawn stylized hearts vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/14/60/beautiful-heart-on-white-vector-24361460.jpg"><a href="//www.vectorstock.com/royalty-free-vector/beautiful-heart-on-white-vector-24361460" title="beautiful heart on white vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/14/60/beautiful-heart-on-white-vector-24361460.jpg" title="beautiful heart on white" alt="beautiful heart on white vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/52/10/hand-drawn-watercolor-painted-red-heart-shape-vector-11645210.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-watercolor-painted-red-heart-shape-vector-11645210" title="Hand-drawn watercolor painted red heart shape vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/52/10/hand-drawn-watercolor-painted-red-heart-shape-vector-11645210.jpg" title="Hand-drawn watercolor painted red heart shape" alt="Hand-drawn watercolor painted red heart shape vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/79/79/valentines-day-card-with-lettering-i-love-you-vector-23527979.jpg"><a href="//www.vectorstock.com/royalty-free-vector/valentines-day-card-with-lettering-i-love-you-vector-23527979" title="valentines day card with lettering - i love you vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/79/79/valentines-day-card-with-lettering-i-love-you-vector-23527979.jpg" title="valentines day card with lettering - i love you" alt="valentines day card with lettering - i love you vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/52/14/set-of-pink-watercolor-hearts-vector-13785214.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-pink-watercolor-hearts-vector-13785214" title="set of pink watercolor hearts vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/52/14/set-of-pink-watercolor-hearts-vector-13785214.jpg" title="set of pink watercolor hearts" alt="set of pink watercolor hearts vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/91/83/colorful-grunge-heart-splash-abstract-brush-vector-22109183.jpg"><a href="//www.vectorstock.com/royalty-free-vector/colorful-grunge-heart-splash-abstract-brush-vector-22109183" title="colorful grunge heart splash abstract brush vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/91/83/colorful-grunge-heart-splash-abstract-brush-vector-22109183.jpg" title="colorful grunge heart splash abstract brush" alt="colorful grunge heart splash abstract brush vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/31/30/heart-logo-vector-13643130.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-logo-vector-13643130" title="heart logo vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/31/30/heart-logo-vector-13643130.jpg" title="heart logo" alt="heart logo vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/54/80/set-of-watercolor-hearts-happy-valentine-day-vector-5575480.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-watercolor-hearts-happy-valentine-day-vector-5575480" title="Set of watercolor hearts Happy Valentine day vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/54/80/set-of-watercolor-hearts-happy-valentine-day-vector-5575480.jpg" title="Set of watercolor hearts Happy Valentine day" alt="Set of watercolor hearts Happy Valentine day vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/59/29/heart-distress-isolated-vector-23685929.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-distress-isolated-vector-23685929" title="heart distress isolated vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/59/29/heart-distress-isolated-vector-23685929.jpg" title="heart distress isolated" alt="heart distress isolated vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/53/04/hand-drawn-hearts-vector-13645304.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-hearts-vector-13645304" title="hand drawn hearts vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/53/04/hand-drawn-hearts-vector-13645304.jpg" title="hand drawn hearts" alt="hand drawn hearts vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/04/28/heart-shaped-gift-box-icon-on-pink-background-vector-19840428.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-shaped-gift-box-icon-on-pink-background-vector-19840428" title="heart shaped gift box icon on pink background vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/04/28/heart-shaped-gift-box-icon-on-pink-background-vector-19840428.jpg" title="heart shaped gift box icon on pink background" alt="heart shaped gift box icon on pink background vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/77/22/heart-shape-design-for-love-symbols-vector-23867722.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-shape-design-for-love-symbols-vector-23867722" title="heart shape design for love symbols vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/77/22/heart-shape-design-for-love-symbols-vector-23867722.jpg" title="heart shape design for love symbols" alt="heart shape design for love symbols vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/26/05/heart-graphic-vector-13992605.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-graphic-vector-13992605" title="heart graphic vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/26/05/heart-graphic-vector-13992605.jpg" title="heart graphic" alt="heart graphic vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/94/03/grunge-heart-gap-vector-24369403.jpg"><a href="//www.vectorstock.com/royalty-free-vector/grunge-heart-gap-vector-24369403" title="grunge heart gap vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/94/03/grunge-heart-gap-vector-24369403.jpg" title="grunge heart gap" alt="grunge heart gap vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/41/06/heart-watercolor-technique-vector-3714106.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-watercolor-technique-vector-3714106" title="Heart watercolor technique vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/41/06/heart-watercolor-technique-vector-3714106.jpg" title="Heart watercolor technique" alt="Heart watercolor technique vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/10/55/hand-drawn-doodle-style-heart-isolated-on-white-vector-26301055.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-doodle-style-heart-isolated-on-white-vector-26301055" title="hand drawn doodle style heart isolated on white vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/10/55/hand-drawn-doodle-style-heart-isolated-on-white-vector-26301055.jpg" title="hand drawn doodle style heart isolated on white" alt="hand drawn doodle style heart isolated on white vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/62/03/watercolor-hearts-for-st-valentine-s-day-vector-23266203.jpg"><a href="//www.vectorstock.com/royalty-free-vector/watercolor-hearts-for-st-valentine-s-day-vector-23266203" title="watercolor hearts for st valentine s day vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/62/03/watercolor-hearts-for-st-valentine-s-day-vector-23266203.jpg" title="watercolor hearts for st valentine s day" alt="watercolor hearts for st valentine s day vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/81/62/valentines-day-sign-vector-6678162.jpg"><a href="//www.vectorstock.com/royalty-free-vector/valentines-day-sign-vector-6678162" title="Valentines Day Sign vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/81/62/valentines-day-sign-vector-6678162.jpg" title="Valentines Day Sign" alt="Valentines Day Sign vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/06/60/colorful-bright-heart-vector-23040660.jpg"><a href="//www.vectorstock.com/royalty-free-vector/colorful-bright-heart-vector-23040660" title="colorful bright heart vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/06/60/colorful-bright-heart-vector-23040660.jpg" title="colorful bright heart" alt="colorful bright heart vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/53/80/heart-watercolor-pink-painted-vector-1885380.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-watercolor-pink-painted-vector-1885380" title="Heart watercolor pink painted vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/53/80/heart-watercolor-pink-painted-vector-1885380.jpg" title="Heart watercolor pink painted" alt="Heart watercolor pink painted vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="22911665" data-title="hand drawing heart in the form of a fingerprint" data-src="https://cdn1.vectorstock.com/i/thumbs/16/65/hand-drawing-heart-in-the-form-of-a-fingerprint-vector-22911665.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawing-heart-in-the-form-of-a-fingerprint-vector-22911665" title="hand drawing heart in the form of a fingerprint vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/16/65/hand-drawing-heart-in-the-form-of-a-fingerprint-vector-22911665.jpg" title="hand drawing heart in the form of a fingerprint" alt="hand drawing heart in the form of a fingerprint vector image"></noscript></a></li>
+						<li data-id="20788238" data-title="white abstract flying heart with black wings" data-src="https://cdn4.vectorstock.com/i/thumbs/82/38/white-abstract-flying-heart-with-black-wings-vector-20788238.jpg"><a href="//www.vectorstock.com/royalty-free-vector/white-abstract-flying-heart-with-black-wings-vector-20788238" title="white abstract flying heart with black wings vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/82/38/white-abstract-flying-heart-with-black-wings-vector-20788238.jpg" title="white abstract flying heart with black wings" alt="white abstract flying heart with black wings vector image"></noscript></a></li>
+						<li data-id="14553687" data-title="watercolor logo design32" data-src="https://cdn3.vectorstock.com/i/thumbs/36/87/watercolor-logo-design32-vector-14553687.jpg"><a href="//www.vectorstock.com/royalty-free-vector/watercolor-logo-design32-vector-14553687" title="watercolor logo design32 vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/36/87/watercolor-logo-design32-vector-14553687.jpg" title="watercolor logo design32" alt="watercolor logo design32 vector image"></noscript></a></li>
+						<li data-id="25528658" data-title="hand painted with brush isolated big pink heart" data-src="https://cdn4.vectorstock.com/i/thumbs/86/58/hand-painted-with-brush-isolated-big-pink-heart-vector-25528658.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-painted-with-brush-isolated-big-pink-heart-vector-25528658" title="hand painted with brush isolated big pink heart vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/86/58/hand-painted-with-brush-isolated-big-pink-heart-vector-25528658.jpg" title="hand painted with brush isolated big pink heart" alt="hand painted with brush isolated big pink heart vector image"></noscript></a></li>
+						<li data-id="13770879" data-title="butterfly logo with heart shaped wings" data-src="https://cdn5.vectorstock.com/i/thumbs/08/79/butterfly-logo-with-heart-shaped-wings-vector-13770879.jpg"><a href="//www.vectorstock.com/royalty-free-vector/butterfly-logo-with-heart-shaped-wings-vector-13770879" title="butterfly logo with heart shaped wings vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/08/79/butterfly-logo-with-heart-shaped-wings-vector-13770879.jpg" title="butterfly logo with heart shaped wings" alt="butterfly logo with heart shaped wings vector image"></noscript></a></li>
+						<li data-id="25142798" data-title="red abstract heart similar to painting" data-src="https://cdn4.vectorstock.com/i/thumbs/27/98/red-abstract-heart-similar-to-painting-vector-25142798.jpg"><a href="//www.vectorstock.com/royalty-free-vector/red-abstract-heart-similar-to-painting-vector-25142798" title="red abstract heart similar to painting vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/27/98/red-abstract-heart-similar-to-painting-vector-25142798.jpg" title="red abstract heart similar to painting" alt="red abstract heart similar to painting vector image"></noscript></a></li>
+						<li data-id="22685968" data-title="watercolor painted heart" data-src="https://cdn4.vectorstock.com/i/thumbs/59/68/watercolor-painted-heart-vector-22685968.jpg"><a href="//www.vectorstock.com/royalty-free-vector/watercolor-painted-heart-vector-22685968" title="watercolor painted heart vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/59/68/watercolor-painted-heart-vector-22685968.jpg" title="watercolor painted heart" alt="watercolor painted heart vector image"></noscript></a></li>
+						<li data-id="23097598" data-title="hand drawn hearts design elements for valentine" data-src="https://cdn4.vectorstock.com/i/thumbs/75/98/hand-drawn-hearts-design-elements-for-valentine-vector-23097598.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-hearts-design-elements-for-valentine-vector-23097598" title="hand drawn hearts design elements for valentine vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/75/98/hand-drawn-hearts-design-elements-for-valentine-vector-23097598.jpg" title="hand drawn hearts design elements for valentine" alt="hand drawn hearts design elements for valentine vector image"></noscript></a></li>
+						<li data-id="13965268" data-title="logotype heart from brush strokes grunge" data-src="https://cdn4.vectorstock.com/i/thumbs/52/68/logotype-heart-from-brush-strokes-grunge-vector-13965268.jpg"><a href="//www.vectorstock.com/royalty-free-vector/logotype-heart-from-brush-strokes-grunge-vector-13965268" title="logotype heart from brush strokes grunge vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/52/68/logotype-heart-from-brush-strokes-grunge-vector-13965268.jpg" title="logotype heart from brush strokes grunge" alt="logotype heart from brush strokes grunge vector image"></noscript></a></li>
+						<li data-id="26328240" data-title="heart shape" data-src="https://cdn1.vectorstock.com/i/thumbs/82/40/heart-shape-vector-26328240.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-shape-vector-26328240" title="heart shape vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/82/40/heart-shape-vector-26328240.jpg" title="heart shape" alt="heart shape vector image"></noscript></a></li>
+						<li data-id="4514103" data-title="Watercolor heart set" data-src="https://cdn4.vectorstock.com/i/thumbs/41/03/watercolor-heart-set-vector-4514103.jpg"><a href="//www.vectorstock.com/royalty-free-vector/watercolor-heart-set-vector-4514103" title="Watercolor heart set vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/41/03/watercolor-heart-set-vector-4514103.jpg" title="Watercolor heart set" alt="Watercolor heart set vector image"></noscript></a></li>
+						<li data-id="16696142" data-title="watercolor heart on white background sketch" data-src="https://cdn3.vectorstock.com/i/thumbs/61/42/watercolor-heart-on-white-background-sketch-vector-16696142.jpg"><a href="//www.vectorstock.com/royalty-free-vector/watercolor-heart-on-white-background-sketch-vector-16696142" title="watercolor heart on white background sketch vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/61/42/watercolor-heart-on-white-background-sketch-vector-16696142.jpg" title="watercolor heart on white background sketch" alt="watercolor heart on white background sketch vector image"></noscript></a></li>
+						<li data-id="24912055" data-title="valentine day design template" data-src="https://cdn1.vectorstock.com/i/thumbs/20/55/valentine-day-design-template-vector-24912055.jpg"><a href="//www.vectorstock.com/royalty-free-vector/valentine-day-design-template-vector-24912055" title="valentine day design template vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/20/55/valentine-day-design-template-vector-24912055.jpg" title="valentine day design template" alt="valentine day design template vector image"></noscript></a></li>
+						<li data-id="20872357" data-title="box of heart shape poster" data-src="https://cdn3.vectorstock.com/i/thumbs/23/57/box-of-heart-shape-poster-vector-20872357.jpg"><a href="//www.vectorstock.com/royalty-free-vector/box-of-heart-shape-poster-vector-20872357" title="box of heart shape poster vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/23/57/box-of-heart-shape-poster-vector-20872357.jpg" title="box of heart shape poster" alt="box of heart shape poster vector image"></noscript></a></li>
+						<li data-id="23541308" data-title="pink flower logo concept design symbol graphic" data-src="https://cdn4.vectorstock.com/i/thumbs/13/08/pink-flower-logo-concept-design-symbol-graphic-vector-23541308.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pink-flower-logo-concept-design-symbol-graphic-vector-23541308" title="pink flower logo concept design symbol graphic vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/13/08/pink-flower-logo-concept-design-symbol-graphic-vector-23541308.jpg" title="pink flower logo concept design symbol graphic" alt="pink flower logo concept design symbol graphic vector image"></noscript></a></li>
+						<li data-id="20321335" data-title="handwritten inscription love fine feast on a" data-src="https://cdn1.vectorstock.com/i/thumbs/13/35/handwritten-inscription-love-fine-feast-on-a-vector-20321335.jpg"><a href="//www.vectorstock.com/royalty-free-vector/handwritten-inscription-love-fine-feast-on-a-vector-20321335" title="handwritten inscription love fine feast on a vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/13/35/handwritten-inscription-love-fine-feast-on-a-vector-20321335.jpg" title="handwritten inscription love fine feast on a" alt="handwritten inscription love fine feast on a vector image"></noscript></a></li>
+						<li data-id="21833727" data-title="sun icon hot summer tourism logo template" data-src="https://cdn3.vectorstock.com/i/thumbs/37/27/sun-icon-hot-summer-tourism-logo-template-vector-21833727.jpg"><a href="//www.vectorstock.com/royalty-free-vector/sun-icon-hot-summer-tourism-logo-template-vector-21833727" title="sun icon hot summer tourism logo template vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/37/27/sun-icon-hot-summer-tourism-logo-template-vector-21833727.jpg" title="sun icon hot summer tourism logo template" alt="sun icon hot summer tourism logo template vector image"></noscript></a></li>
+						<li data-id="23848583" data-title="set of grunge hearts" data-src="https://cdn4.vectorstock.com/i/thumbs/85/83/set-of-grunge-hearts-vector-23848583.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-grunge-hearts-vector-23848583" title="set of grunge hearts vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/85/83/set-of-grunge-hearts-vector-23848583.jpg" title="set of grunge hearts" alt="set of grunge hearts vector image"></noscript></a></li>
+						<li data-id="23864099" data-title="pink love text caligraphy romantic design" data-src="https://cdn5.vectorstock.com/i/thumbs/40/99/pink-love-text-caligraphy-romantic-design-vector-23864099.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pink-love-text-caligraphy-romantic-design-vector-23864099" title="pink love text caligraphy romantic design vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/40/99/pink-love-text-caligraphy-romantic-design-vector-23864099.jpg" title="pink love text caligraphy romantic design" alt="pink love text caligraphy romantic design vector image"></noscript></a></li>
+						<li data-id="3626955" data-title="Purple Scribble Hand Drawn Grunge Heart logo" data-src="https://cdn1.vectorstock.com/i/thumbs/69/55/purple-scribble-hand-drawn-grunge-heart-logo-vector-3626955.jpg"><a href="//www.vectorstock.com/royalty-free-vector/purple-scribble-hand-drawn-grunge-heart-logo-vector-3626955" title="Purple Scribble Hand Drawn Grunge Heart logo vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/69/55/purple-scribble-hand-drawn-grunge-heart-logo-vector-3626955.jpg" title="Purple Scribble Hand Drawn Grunge Heart logo" alt="Purple Scribble Hand Drawn Grunge Heart logo vector image"></noscript></a></li>
+						<li data-id="20706728" data-title="set of watercolor hearts hand-drawn" data-src="https://cdn4.vectorstock.com/i/thumbs/67/28/set-of-watercolor-hearts-hand-drawn-vector-20706728.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-watercolor-hearts-hand-drawn-vector-20706728" title="set of watercolor hearts hand-drawn vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/67/28/set-of-watercolor-hearts-hand-drawn-vector-20706728.jpg" title="set of watercolor hearts hand-drawn" alt="set of watercolor hearts hand-drawn vector image"></noscript></a></li>
+						<li data-id="26224712" data-title="hand paint print isolated white background pink" data-src="https://cdn3.vectorstock.com/i/thumbs/47/12/hand-paint-print-isolated-white-background-pink-vector-26224712.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-paint-print-isolated-white-background-pink-vector-26224712" title="hand paint print isolated white background pink vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/47/12/hand-paint-print-isolated-white-background-pink-vector-26224712.jpg" title="hand paint print isolated white background pink" alt="hand paint print isolated white background pink vector image"></noscript></a></li>
+						<li data-id="3076331" data-title="Seamless pattern with watercolor hearts" data-src="https://cdn2.vectorstock.com/i/thumbs/63/31/seamless-pattern-with-watercolor-hearts-vector-3076331.jpg"><a href="//www.vectorstock.com/royalty-free-vector/seamless-pattern-with-watercolor-hearts-vector-3076331" title="Seamless pattern with watercolor hearts vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/63/31/seamless-pattern-with-watercolor-hearts-vector-3076331.jpg" title="Seamless pattern with watercolor hearts" alt="Seamless pattern with watercolor hearts vector image"></noscript></a></li>
+						<li data-id="21540209" data-title="heart watercolor paint of splatter love icon" data-src="https://cdn5.vectorstock.com/i/thumbs/02/09/heart-watercolor-paint-of-splatter-love-icon-vector-21540209.jpg"><a href="//www.vectorstock.com/royalty-free-vector/heart-watercolor-paint-of-splatter-love-icon-vector-21540209" title="heart watercolor paint of splatter love icon vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/02/09/heart-watercolor-paint-of-splatter-love-icon-vector-21540209.jpg" title="heart watercolor paint of splatter love icon" alt="heart watercolor paint of splatter love icon vector image"></noscript></a></li>
+						<li data-id="7449236" data-title="Pink Valentine heart watercolor" data-src="https://cdn2.vectorstock.com/i/thumbs/92/36/pink-valentine-heart-watercolor-vector-7449236.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pink-valentine-heart-watercolor-vector-7449236" title="Pink Valentine heart watercolor vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/92/36/pink-valentine-heart-watercolor-vector-7449236.jpg" title="Pink Valentine heart watercolor" alt="Pink Valentine heart watercolor vector image"></noscript></a></li>
+						<li data-id="24508345" data-title="doodle love heart valentines day set" data-src="https://cdn1.vectorstock.com/i/thumbs/83/45/doodle-love-heart-valentines-day-set-vector-24508345.jpg"><a href="//www.vectorstock.com/royalty-free-vector/doodle-love-heart-valentines-day-set-vector-24508345" title="doodle love heart valentines day set vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/83/45/doodle-love-heart-valentines-day-set-vector-24508345.jpg" title="doodle love heart valentines day set" alt="doodle love heart valentines day set vector image"></noscript></a></li>
+						<li data-id="13633098" data-title="watercolor abstract background" data-src="https://cdn4.vectorstock.com/i/thumbs/30/98/watercolor-abstract-background-vector-13633098.jpg"><a href="//www.vectorstock.com/royalty-free-vector/watercolor-abstract-background-vector-13633098" title="watercolor abstract background vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/30/98/watercolor-abstract-background-vector-13633098.jpg" title="watercolor abstract background" alt="watercolor abstract background vector image"></noscript></a></li>
+						<li data-id="21429659" data-title="happy valentines day template set" data-src="https://cdn5.vectorstock.com/i/thumbs/96/59/happy-valentines-day-template-set-vector-21429659.jpg"><a href="//www.vectorstock.com/royalty-free-vector/happy-valentines-day-template-set-vector-21429659" title="happy valentines day template set vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/96/59/happy-valentines-day-template-set-vector-21429659.jpg" title="happy valentines day template set" alt="happy valentines day template set vector image"></noscript></a></li>
+						<li data-id="23624239" data-title="watercolor valentine heart pattern" data-src="https://cdn5.vectorstock.com/i/thumbs/42/39/watercolor-valentine-heart-pattern-vector-23624239.jpg"><a href="//www.vectorstock.com/royalty-free-vector/watercolor-valentine-heart-pattern-vector-23624239" title="watercolor valentine heart pattern vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/42/39/watercolor-valentine-heart-pattern-vector-23624239.jpg" title="watercolor valentine heart pattern" alt="watercolor valentine heart pattern vector image"></noscript></a></li>
+						<li data-id="23660361" data-title="valentines day background with gold heart" data-src="https://cdn2.vectorstock.com/i/thumbs/03/61/valentines-day-background-with-gold-heart-vector-23660361.jpg"><a href="//www.vectorstock.com/royalty-free-vector/valentines-day-background-with-gold-heart-vector-23660361" title="valentines day background with gold heart vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/03/61/valentines-day-background-with-gold-heart-vector-23660361.jpg" title="valentines day background with gold heart" alt="valentines day background with gold heart vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/watercolor-shaped-icon-vectors"><span class="lrg">More Watercolor Shaped Icon Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-artist" class="group">
+				<h6><span class="icon"></span><strong>More by <a href="/royalty-free-vectors/vectors-by_Shaitan1985" rel="nofollow">Shaitan1985</a></strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/96/21/pink-heart-shaped-outlined-icons-vector-12719621.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pink-heart-shaped-outlined-icons-vector-12719621" title="Pink heart shaped outlined icons vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/96/21/pink-heart-shaped-outlined-icons-vector-12719621.jpg" title="Pink heart shaped outlined icons" alt="Pink heart shaped outlined icons vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/96/65/pair-of-pink-heart-outlined-icons-vector-12719665.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pair-of-pink-heart-outlined-icons-vector-12719665" title="pair of pink heart outlined icons vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/96/65/pair-of-pink-heart-outlined-icons-vector-12719665.jpg" title="pair of pink heart outlined icons" alt="pair of pink heart outlined icons vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/94/61/hand-drawn-hearts-set-design-element-for-vector-24719461.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-hearts-set-design-element-for-vector-24719461" title="hand drawn hearts set design element for vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/94/61/hand-drawn-hearts-set-design-element-for-vector-24719461.jpg" title="hand drawn hearts set design element for" alt="hand drawn hearts set design element for vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/94/71/hand-drawn-contour-hearts-set-design-element-for-vector-24719471.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-contour-hearts-set-design-element-for-vector-24719471" title="hand drawn contour hearts set design element for vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/94/71/hand-drawn-contour-hearts-set-design-element-for-vector-24719471.jpg" title="hand drawn contour hearts set design element for" alt="hand drawn contour hearts set design element for vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/96/09/set-of-red-asymmetric-heart-valentine-day-icons-vector-12719609.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-red-asymmetric-heart-valentine-day-icons-vector-12719609" title="set of red asymmetric heart valentine day icons vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/96/09/set-of-red-asymmetric-heart-valentine-day-icons-vector-12719609.jpg" title="set of red asymmetric heart valentine day icons" alt="set of red asymmetric heart valentine day icons vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/94/47/hand-drawn-hearts-set-design-element-for-vector-24719447.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-hearts-set-design-element-for-vector-24719447" title="hand drawn hearts set design element for vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/94/47/hand-drawn-hearts-set-design-element-for-vector-24719447.jpg" title="hand drawn hearts set design element for" alt="hand drawn hearts set design element for vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/15/37/paper-red-valentines-day-heart-vector-12741537.jpg"><a href="//www.vectorstock.com/royalty-free-vector/paper-red-valentines-day-heart-vector-12741537" title="paper red valentines day heart vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/15/37/paper-red-valentines-day-heart-vector-12741537.jpg" title="paper red valentines day heart" alt="paper red valentines day heart vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/15/45/paper-red-valentines-day-heart-vector-12741545.jpg"><a href="//www.vectorstock.com/royalty-free-vector/paper-red-valentines-day-heart-vector-12741545" title="paper red valentines day heart vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/15/45/paper-red-valentines-day-heart-vector-12741545.jpg" title="paper red valentines day heart" alt="paper red valentines day heart vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/15/40/paper-red-valentines-day-heart-vector-12741540.jpg"><a href="//www.vectorstock.com/royalty-free-vector/paper-red-valentines-day-heart-vector-12741540" title="paper red valentines day heart vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/15/40/paper-red-valentines-day-heart-vector-12741540.jpg" title="paper red valentines day heart" alt="paper red valentines day heart vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/94/51/hand-drawn-contour-hearts-set-design-element-for-vector-24719451.jpg"><a href="//www.vectorstock.com/royalty-free-vector/hand-drawn-contour-hearts-set-design-element-for-vector-24719451" title="hand drawn contour hearts set design element for vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/94/51/hand-drawn-contour-hearts-set-design-element-for-vector-24719451.jpg" title="hand drawn contour hearts set design element for" alt="hand drawn contour hearts set design element for vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="9693595" data-title="simple heart icon Love symbol Stock" data-src="https://cdn1.vectorstock.com/i/thumbs/35/95/simple-heart-icon-love-symbol-stock-vector-9693595.jpg"><a href="//www.vectorstock.com/royalty-free-vector/simple-heart-icon-love-symbol-stock-vector-9693595" title="simple heart icon Love symbol Stock vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/35/95/simple-heart-icon-love-symbol-stock-vector-9693595.jpg" title="simple heart icon Love symbol Stock" alt="simple heart icon Love symbol Stock vector image vector image"></noscript></a></li>
+						<li data-id="12719203" data-title="many red hearts on white background for valentines" data-src="https://cdn4.vectorstock.com/i/thumbs/92/03/many-red-hearts-on-white-background-for-valentines-vector-12719203.jpg"><a href="//www.vectorstock.com/royalty-free-vector/many-red-hearts-on-white-background-for-valentines-vector-12719203" title="many red hearts on white background for valentines vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/92/03/many-red-hearts-on-white-background-for-valentines-vector-12719203.jpg" title="many red hearts on white background for valentines" alt="many red hearts on white background for valentines vector image vector image"></noscript></a></li>
+						<li data-id="12719615" data-title="red heart valentine day icon" data-src="https://cdn1.vectorstock.com/i/thumbs/96/15/red-heart-valentine-day-icon-vector-12719615.jpg"><a href="//www.vectorstock.com/royalty-free-vector/red-heart-valentine-day-icon-vector-12719615" title="red heart valentine day icon vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/96/15/red-heart-valentine-day-icon-vector-12719615.jpg" title="red heart valentine day icon" alt="red heart valentine day icon vector image vector image"></noscript></a></li>
+						<li data-id="12719210" data-title="many red hearts valentines day background" data-src="https://cdn1.vectorstock.com/i/thumbs/92/10/many-red-hearts-valentines-day-background-vector-12719210.jpg"><a href="//www.vectorstock.com/royalty-free-vector/many-red-hearts-valentines-day-background-vector-12719210" title="many red hearts valentines day background vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/92/10/many-red-hearts-valentines-day-background-vector-12719210.jpg" title="many red hearts valentines day background" alt="many red hearts valentines day background vector image vector image"></noscript></a></li>
+						<li data-id="12692676" data-title="red heart valentine day icon" data-src="https://cdn2.vectorstock.com/i/thumbs/26/76/red-heart-valentine-day-icon-vector-12692676.jpg"><a href="//www.vectorstock.com/royalty-free-vector/red-heart-valentine-day-icon-vector-12692676" title="red heart valentine day icon vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/26/76/red-heart-valentine-day-icon-vector-12692676.jpg" title="red heart valentine day icon" alt="red heart valentine day icon vector image vector image"></noscript></a></li>
+						<li data-id="12719209" data-title="many red hearts valentines day background" data-src="https://cdn5.vectorstock.com/i/thumbs/92/09/many-red-hearts-valentines-day-background-vector-12719209.jpg"><a href="//www.vectorstock.com/royalty-free-vector/many-red-hearts-valentines-day-background-vector-12719209" title="many red hearts valentines day background vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/92/09/many-red-hearts-valentines-day-background-vector-12719209.jpg" title="many red hearts valentines day background" alt="many red hearts valentines day background vector image vector image"></noscript></a></li>
+						<li data-id="24250956" data-title="speech bubble doodle stickers set with multiple" data-src="https://cdn2.vectorstock.com/i/thumbs/09/56/speech-bubble-doodle-stickers-set-with-multiple-vector-24250956.jpg"><a href="//www.vectorstock.com/royalty-free-vector/speech-bubble-doodle-stickers-set-with-multiple-vector-24250956" title="speech bubble doodle stickers set with multiple vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/09/56/speech-bubble-doodle-stickers-set-with-multiple-vector-24250956.jpg" title="speech bubble doodle stickers set with multiple" alt="speech bubble doodle stickers set with multiple vector image vector image"></noscript></a></li>
+						<li data-id="23862831" data-title="glossy steel shield protection symbol for" data-src="https://cdn2.vectorstock.com/i/thumbs/28/31/glossy-steel-shield-protection-symbol-for-vector-23862831.jpg"><a href="//www.vectorstock.com/royalty-free-vector/glossy-steel-shield-protection-symbol-for-vector-23862831" title="glossy steel shield protection symbol for vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/28/31/glossy-steel-shield-protection-symbol-for-vector-23862831.jpg" title="glossy steel shield protection symbol for" alt="glossy steel shield protection symbol for vector image vector image"></noscript></a></li>
+						<li data-id="24250965" data-title="various cute speech bubble doodle stickers set" data-src="https://cdn1.vectorstock.com/i/thumbs/09/65/various-cute-speech-bubble-doodle-stickers-set-vector-24250965.jpg"><a href="//www.vectorstock.com/royalty-free-vector/various-cute-speech-bubble-doodle-stickers-set-vector-24250965" title="various cute speech bubble doodle stickers set vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/09/65/various-cute-speech-bubble-doodle-stickers-set-vector-24250965.jpg" title="various cute speech bubble doodle stickers set" alt="various cute speech bubble doodle stickers set vector image vector image"></noscript></a></li>
+						<li data-id="24720499" data-title="color gender icon man and woman symbols" data-src="https://cdn5.vectorstock.com/i/thumbs/04/99/color-gender-icon-man-and-woman-symbols-vector-24720499.jpg"><a href="//www.vectorstock.com/royalty-free-vector/color-gender-icon-man-and-woman-symbols-vector-24720499" title="color gender icon man and woman symbols vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/04/99/color-gender-icon-man-and-woman-symbols-vector-24720499.jpg" title="color gender icon man and woman symbols" alt="color gender icon man and woman symbols vector image vector image"></noscript></a></li>
+						<li data-id="23699400" data-title="green geometric abstract logo template logotype" data-src="https://cdn1.vectorstock.com/i/thumbs/94/00/green-geometric-abstract-logo-template-logotype-vector-23699400.jpg"><a href="//www.vectorstock.com/royalty-free-vector/green-geometric-abstract-logo-template-logotype-vector-23699400" title="green geometric abstract logo template logotype vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/94/00/green-geometric-abstract-logo-template-logotype-vector-23699400.jpg" title="green geometric abstract logo template logotype" alt="green geometric abstract logo template logotype vector image vector image"></noscript></a></li>
+						<li data-id="23936308" data-title="rainbow and clouds seamless pattern" data-src="https://cdn4.vectorstock.com/i/thumbs/63/08/rainbow-and-clouds-seamless-pattern-vector-23936308.jpg"><a href="//www.vectorstock.com/royalty-free-vector/rainbow-and-clouds-seamless-pattern-vector-23936308" title="rainbow and clouds seamless pattern vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/63/08/rainbow-and-clouds-seamless-pattern-vector-23936308.jpg" title="rainbow and clouds seamless pattern" alt="rainbow and clouds seamless pattern vector image vector image"></noscript></a></li>
+						<li data-id="23670387" data-title="green geometric abstract logo template logotype" data-src="https://cdn3.vectorstock.com/i/thumbs/03/87/green-geometric-abstract-logo-template-logotype-vector-23670387.jpg"><a href="//www.vectorstock.com/royalty-free-vector/green-geometric-abstract-logo-template-logotype-vector-23670387" title="green geometric abstract logo template logotype vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/03/87/green-geometric-abstract-logo-template-logotype-vector-23670387.jpg" title="green geometric abstract logo template logotype" alt="green geometric abstract logo template logotype vector image vector image"></noscript></a></li>
+						<li data-id="23575680" data-title="pink spinel gem shining logo drop shaped" data-src="https://cdn1.vectorstock.com/i/thumbs/56/80/pink-spinel-gem-shining-logo-drop-shaped-vector-23575680.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pink-spinel-gem-shining-logo-drop-shaped-vector-23575680" title="pink spinel gem shining logo drop shaped vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/56/80/pink-spinel-gem-shining-logo-drop-shaped-vector-23575680.jpg" title="pink spinel gem shining logo drop shaped" alt="pink spinel gem shining logo drop shaped vector image vector image"></noscript></a></li>
+						<li data-id="23670403" data-title="blue geometric abstract logo template logotype" data-src="https://cdn4.vectorstock.com/i/thumbs/04/03/blue-geometric-abstract-logo-template-logotype-vector-23670403.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blue-geometric-abstract-logo-template-logotype-vector-23670403" title="blue geometric abstract logo template logotype vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/04/03/blue-geometric-abstract-logo-template-logotype-vector-23670403.jpg" title="blue geometric abstract logo template logotype" alt="blue geometric abstract logo template logotype vector image vector image"></noscript></a></li>
+						<li data-id="23699416" data-title="light blue geometric abstract logo template" data-src="https://cdn2.vectorstock.com/i/thumbs/94/16/light-blue-geometric-abstract-logo-template-vector-23699416.jpg"><a href="//www.vectorstock.com/royalty-free-vector/light-blue-geometric-abstract-logo-template-vector-23699416" title="light blue geometric abstract logo template vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/94/16/light-blue-geometric-abstract-logo-template-vector-23699416.jpg" title="light blue geometric abstract logo template" alt="light blue geometric abstract logo template vector image vector image"></noscript></a></li>
+						<li data-id="23670394" data-title="green geometric abstract logo template logotype" data-src="https://cdn5.vectorstock.com/i/thumbs/03/94/green-geometric-abstract-logo-template-logotype-vector-23670394.jpg"><a href="//www.vectorstock.com/royalty-free-vector/green-geometric-abstract-logo-template-logotype-vector-23670394" title="green geometric abstract logo template logotype vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/03/94/green-geometric-abstract-logo-template-logotype-vector-23670394.jpg" title="green geometric abstract logo template logotype" alt="green geometric abstract logo template logotype vector image vector image"></noscript></a></li>
+						<li data-id="23670382" data-title="green geometric abstract logo template logotype" data-src="https://cdn3.vectorstock.com/i/thumbs/03/82/green-geometric-abstract-logo-template-logotype-vector-23670382.jpg"><a href="//www.vectorstock.com/royalty-free-vector/green-geometric-abstract-logo-template-logotype-vector-23670382" title="green geometric abstract logo template logotype vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/03/82/green-geometric-abstract-logo-template-logotype-vector-23670382.jpg" title="green geometric abstract logo template logotype" alt="green geometric abstract logo template logotype vector image vector image"></noscript></a></li>
+						<li data-id="12692672" data-title="Red hearts pair overlap isolated icon" data-src="https://cdn3.vectorstock.com/i/thumbs/26/72/red-hearts-pair-overlap-isolated-icon-vector-12692672.jpg"><a href="//www.vectorstock.com/royalty-free-vector/red-hearts-pair-overlap-isolated-icon-vector-12692672" title="Red hearts pair overlap isolated icon vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/26/72/red-hearts-pair-overlap-isolated-icon-vector-12692672.jpg" title="Red hearts pair overlap isolated icon" alt="Red hearts pair overlap isolated icon vector image vector image"></noscript></a></li>
+						<li data-id="23575716" data-title="pink sapphire gem shining logo drop shaped" data-src="https://cdn2.vectorstock.com/i/thumbs/57/16/pink-sapphire-gem-shining-logo-drop-shaped-vector-23575716.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pink-sapphire-gem-shining-logo-drop-shaped-vector-23575716" title="pink sapphire gem shining logo drop shaped vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/57/16/pink-sapphire-gem-shining-logo-drop-shaped-vector-23575716.jpg" title="pink sapphire gem shining logo drop shaped" alt="pink sapphire gem shining logo drop shaped vector image vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-by_Shaitan1985" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-keywords" class="group">
+				<h6><span class="icon"></span><strong>Related Searches</strong></h6>
+				<ul>
+					<li><a href="/royalty-free-vectors/watercolor-vectors">Watercolor</a></li>
+					<li><a href="/royalty-free-vectors/shaped-vectors">Shaped</a></li>
+					<li><a href="/royalty-free-vectors/icon-vectors">Icon</a></li>
+					<li><a href="/royalty-free-vectors/outlined-vectors">Outlined</a></li>
+					<li><a href="/royalty-free-vectors/heart-vectors">Heart</a></li>
+					<li><a href="/royalty-free-vectors/pink-vectors">Pink</a></li>
+					<li><a href="/royalty-free-vectors/abstract-vectors">Abstract</a></li>
+					<li><a href="/royalty-free-vectors/sign-vectors">Sign</a></li>
+					<li><a href="/royalty-free-vectors/symbol-vectors">Symbol</a></li>
+					<li><a href="/royalty-free-vectors/romance-vectors">Romance</a></li>
+					<li><a href="/royalty-free-vectors/sketch-vectors">Sketch</a></li>
+					<li><a href="/royalty-free-vectors/shape-vectors">Shape</a></li>
+					<li><a href="/royalty-free-vectors/doodle-vectors">Doodle</a></li>
+					<li><a href="/royalty-free-vectors/element-vectors">Element</a></li>
+					<li><a href="/royalty-free-vectors/drawing-vectors">Drawing</a></li>
+					<li><a href="/royalty-free-vectors/outline-vectors">Outline</a></li>
+					<li><a href="/royalty-free-vectors/texture-vectors">Texture</a></li>
+					<li><a href="/royalty-free-vectors/isolated-vectors">Isolated</a></li>
+					<li><a href="/royalty-free-vectors/decoration-vectors">Decoration</a></li>
+					<li><a href="/royalty-free-vectors/love-vectors">Love</a></li>
+					<li><a href="/royalty-free-vectors/romantic-vectors">Romantic</a></li>
+					<li><a href="/royalty-free-vectors/card-vectors">Card</a></li>
+					<li><a href="/royalty-free-vectors/paint-vectors">Paint</a></li>
+					<li><a href="/royalty-free-vectors/color-vectors">Color</a></li>
+					<li><a href="/royalty-free-vectors/drawn-vectors">Drawn</a></li>
+					<li><a href="/royalty-free-vectors/design-vectors">Design</a></li>
+					<li><a href="/royalty-free-vectors/retro-vectors">Retro</a></li>
+					<li><a href="/royalty-free-vectors/background-vectors">Background</a></li>
+					<li><a href="/royalty-free-vectors/scribble-vectors">Scribble</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<!-- Footer -->
+	<footer>
+
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Royalty-Free Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+					<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/account/sell-vectors" title="Become a VectorStock Contributor">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					</ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="http://www.facebook.com/VectorStock" target="_blank"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="http://pinterest.com/vectorstock/" target="_blank"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://twitter.com/VectorStock" target="_blank"><span class="title">Twitter</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock®">VectorStock®</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				© 2019. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+	</div></footer>
+
+
+	<script src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJRQXFwpaFhNeSwNeTB9MAhEAUhQXVFEWXUpJFw0GEg==","queueTime":0,"applicationTime":39,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>

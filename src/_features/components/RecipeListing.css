@@ -1,0 +1,15 @@
+
+.container {
+    flex-direction: row ;
+  }
+  .imageBorder {
+    background: whitesmoke;
+    padding: 1rem;
+
+  }
+
+  .wrapper-container{
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 5em;
+  }
